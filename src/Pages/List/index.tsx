@@ -35,7 +35,6 @@ const List = () => {
 
   return (
     <>
-      <h1>a</h1>
       <CardList Items={item} />
     </>
   );
