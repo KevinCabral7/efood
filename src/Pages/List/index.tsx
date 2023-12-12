@@ -1,41 +1,31 @@
 import { useEffect, useState } from "react";
-import CardList from "../../components/CardList";
+import { useParams } from "react-router-dom";
 
-export type Item = {
-  id: number;
-  cardapio: [
-    {
-      descricao: string;
-      nome: string;
-      foto: string;
-      porcao: string;
-      preco: number;
-    }
-  ];
-};
+import { Item } from "../Home";
+import ItemList from "../../components/ItemList";
+import Banner from "../../components/Banner";
+
 const List = () => {
-  const [item, setItem] = useState<Item[]>([]);
-
-  const verificaLog = () => {
-    console.log(item);
-  };
-
+  const [item, setItem] = useState<Item>();
+  const { id } = useParams();
   useEffect(() => {
-    fetch("https://fake-api-tau.vercel.app/api/efood/restaurantes").then(
+    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`).then(
       (res) => res.json().then((res) => setItem(res))
     );
-    fetch("https://fake-api-tau.vercel.app/api/efood/restaurantes").then(
+    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`).then(
       (res) => console.log(res.json())
     );
-  }, []);
-
-  if (item) {
-    verificaLog();
+  }, [id]);
+  if (!item) {
+    return <h3>Carregando...</h3>;
   }
 
   return (
     <>
-      <CardList Items={item} />
+      <Banner item={item} />
+      <div className="container">
+        <ItemList item={item.cardapio} />
+      </div>
     </>
   );
 };
