@@ -1,13 +1,11 @@
-import Card from "../Card";
+import CardRestaurant from "../CardRestaurant";
 import * as S from "./styles";
 import { Item } from "../../Pages/Home";
-import Banner from "../Banner";
 export type Props = {
   Items: Item[];
-  type: "restaurant" | "item";
 };
 
-const CardList = ({ Items, type }: Props) => {
+const CardList = ({ Items }: Props) => {
   if (!CardList) {
     return (
       <div>
@@ -20,10 +18,9 @@ const CardList = ({ Items, type }: Props) => {
       <S.ContainerRestaurant>
         {Items.map((item) => (
           <li>
-            <Card
+            <CardRestaurant
               id={item.id}
               avaliacao={item.avaliacao}
-              type={type}
               destacado={item.destacado}
               tipo={item.tipo}
               capa={item.capa}

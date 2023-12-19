@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { Item } from "../Home";
 import ItemList from "../../components/ItemList";
-import Banner from "../../components/Banner";
+import NavBanner from "../../components/NavBanner";
 
 const List = () => {
   const [item, setItem] = useState<Item>();
@@ -22,7 +22,7 @@ const List = () => {
 
   return (
     <>
-      <Banner item={item} />
+      <NavBanner item={item} />
       <div className="container">
         <ItemList item={item.cardapio} />
       </div>

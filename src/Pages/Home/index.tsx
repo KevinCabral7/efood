@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CardList from "../../components/CardList";
+import Nav from "../../components/Nav";
 
 export interface CardapioItem {
   foto: string;
@@ -43,8 +44,9 @@ const Home = () => {
 
   return (
     <>
+      <Nav />
       <div className="container">
-        <CardList Items={item} type={"restaurant"} />
+        <CardList Items={item} />
       </div>
     </>
   );

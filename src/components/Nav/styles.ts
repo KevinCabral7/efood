@@ -6,17 +6,18 @@ export const NavContainer = styled.nav`
   font-weight: bold;
   flex-direction: column;
   align-items: center;
-
   img {
-    margin-top: 64px;
-    margin-bottom: 140px;
+    margin: 64px 208px 140px;
   }
   p {
     margin-bottom: 40px;
     color: #e66767;
     line-height: 42px;
     font-size: 36px;
-    width: 50%;
     text-align: center;
   }
+`;
+
+export const ItemsContainer = styled.div`
+  max-width: 544px;
 `;

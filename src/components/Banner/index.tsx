@@ -1,7 +1,7 @@
 import { Item } from "../../Pages/Home";
 import { Hero } from "./styles";
 type Props = {
-  item: Item;
+  item?: Item;
 };
 
 const Banner = ({ item }: Props) => {
@@ -12,8 +12,10 @@ const Banner = ({ item }: Props) => {
   return (
     <>
       <Hero style={{ backgroundImage: `url(${item.capa})` }}>
-        <h4>{item.tipo}</h4>
-        <h3>{item.titulo}</h3>
+        <div className="container">
+          <h4>{item.tipo}</h4>
+          <h3>{item.titulo}</h3>
+        </div>
       </Hero>
     </>
   );

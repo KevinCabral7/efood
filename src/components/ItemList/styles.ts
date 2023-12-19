@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { ButtonContainer } from "../Button/styles";
 
 export const ContainerItems = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 24px;
-  margin-top: 40px;
+  gap: 32px;
+  margin: 56px 0 120px;
   li {
     list-style: none;
   }
@@ -36,7 +37,7 @@ export const Modal = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  max-width: 960px;
+  max-width: 1024px;
   position: relative;
   display: flex;
   z-index: 1;
@@ -45,19 +46,35 @@ export const ModalContent = styled.div`
   font-family: sans-serif;
   line-height: 24px;
   h4 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     color: #fff;
+    margin-bottom: 16px;
   }
 
   p {
     color: #fff;
+    font-size: 14px;
+    line-height: 22px;
   }
 
-  img {
-    width: 100%;
+  > img {
+    width: 280px;
+    height: 280px;
     display: block;
-    height: 250px;
     margin-right: 24px;
+    object-fit: cover;
   }
+  ${ButtonContainer} {
+    width: auto;
+    font-weight: bold;
+    margin-top: 16px;
+  }
+`;
+export const ModalClose = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 8px 8px 0 0;
+  cursor: pointer;
 `;

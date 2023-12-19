@@ -7,6 +7,7 @@ import twitterIcon from "../../assets/twitter-2-svgrepo-com.png";
 const Footer = () => (
   <FooterContainer>
     <img src={icone} alt="" />
+
     <div>
       <img src={instagramIcon} alt="" />
       <img src={facebookIcon} alt="" />

@@ -1,16 +1,19 @@
 import styled from "styled-components";
-import { TagContainer } from "../Tag/styles";
 
 export const Hero = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 280px;
+  justify-content: space-around;
   position: relative;
   padding-top: 16px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
+  .container {
+    z-index: 1;
+  }
 
   &::after {
     content: "";
@@ -25,14 +28,13 @@ export const Hero = styled.div`
   h4,
   h3 {
     color: #fff;
-    margin-left: 170px;
-    z-index: 1;
     font-size: 32px;
     line-height: 37.5px;
   }
   h4 {
     margin-bottom: 156px;
     font-weight: 100;
+    text-transform: capitalize;
   }
   h3 {
     font-weight: bold;
