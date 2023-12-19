@@ -33,10 +33,12 @@ export const Hero = styled.div`
   }
   h4 {
     margin-bottom: 156px;
+    margin-top: 24px;
     font-weight: 100;
     text-transform: capitalize;
   }
   h3 {
     font-weight: bold;
+    margin-bottom: 32px;
   }
 `;

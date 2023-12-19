@@ -13,7 +13,7 @@ export const FooterContainer = styled.nav`
   }
   div {
     img {
-      margin-bottom: 72px;
+      margin-bottom: 76px;
       margin-right: 8px;
     }
   }
@@ -25,5 +25,6 @@ export const FooterContainer = styled.nav`
     text-align: center;
     max-width: 496px;
     display: block;
+    font-weight: 400;
   }
 `;
