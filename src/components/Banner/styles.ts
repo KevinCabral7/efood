@@ -4,7 +4,6 @@ export const Hero = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 280px;
   justify-content: space-around;
   position: relative;
   padding-top: 16px;
