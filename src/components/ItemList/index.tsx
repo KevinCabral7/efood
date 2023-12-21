@@ -81,7 +81,7 @@ const ItemList = ({ item }: Props) => {
                 {modal.descricao}
                 <br />
                 <br />
-                {modal.porcao}
+                Serve: de{modal.porcao}
               </p>
 
               <ButtonContainer>
