@@ -17,7 +17,7 @@ const CardList = ({ Items }: Props) => {
     <>
       <S.ContainerRestaurant>
         {Items.map((item) => (
-          <li>
+          <li key={item.id}>
             <CardRestaurant
               id={item.id}
               avaliacao={item.avaliacao}

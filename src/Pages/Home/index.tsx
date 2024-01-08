@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
 import CardList from "../../components/CardList";
 import Nav from "../../components/Nav";
-
+import { useGetRestaurantQuery } from "../../services/api";
 export interface CardapioItem {
   foto: string;
   preco: number;
-  id: number;
   nome: string;
   descricao: string;
   porcao: string;
+  id: number;
 }
 
 export type Item = {
@@ -23,33 +22,18 @@ export type Item = {
 };
 
 const Home = () => {
-  const [item, setItem] = useState<Item[]>([]);
-
-  const verificaLog = () => {
-    console.log(item);
-  };
-
-  useEffect(() => {
-    fetch("https://fake-api-tau.vercel.app/api/efood/restaurantes").then(
-      (res) => res.json().then((res) => setItem(res))
-    );
-    fetch("https://fake-api-tau.vercel.app/api/efood/restaurantes").then(
-      (res) => console.log(res.json())
-    );
-  }, []);
-
+  const { data: item } = useGetRestaurantQuery();
   if (item) {
-    verificaLog();
+    return (
+      <>
+        <Nav />
+        <div className="container">
+          <CardList Items={item} />
+        </div>
+      </>
+    );
   }
-
-  return (
-    <>
-      <Nav />
-      <div className="container">
-        <CardList Items={item} />
-      </div>
-    </>
-  );
+  return <h3>Carregando...</h3>;
 };
 
 export default Home;

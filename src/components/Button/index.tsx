@@ -10,9 +10,11 @@ export type Props = {
 
 const Button = ({ to, type, variant = "purchase", children }: Props) => {
   if (type === "button") {
-    <ButtonContainer type="button" variant={variant}>
-      {children}
-    </ButtonContainer>;
+    return (
+      <ButtonContainer type="button" variant={variant}>
+        {children}
+      </ButtonContainer>
+    );
   }
   return (
     <ButtonLink type="link" to={to as string}>

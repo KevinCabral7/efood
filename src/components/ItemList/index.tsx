@@ -5,31 +5,22 @@ import { ButtonContainer } from "../../components/Button/styles";
 import * as S from "./styles";
 import Card from "../../components/Card";
 import close from "../../assets/close.png";
+import { useDispatch } from "react-redux";
+import { add, open } from "../../store/reducers/cart";
 
 type Props = {
   item: CardapioItem[];
+  item2?: CardapioItem;
+};
+export const formataPreco = (preco = 0) => {
+  return new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format(preco);
 };
 
-const ItemList = ({ item }: Props) => {
-  const [modal, setModal] = useState({
-    isVisible: false,
-    foto: "",
-    nome: "",
-    descricao: "",
-    porcao: "",
-    preco: 0,
-  });
-
-  const formataPreco = (preco = 0) => {
-    return new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    }).format(preco);
-  };
-  if (item.length === 0) {
-    return <h3>a </h3>;
-  }
-
+const ItemList = ({ item, item2 }: Props) => {
+  const dispatch = useDispatch();
   const closeModal = () => {
     setModal({
       isVisible: false,
@@ -38,8 +29,36 @@ const ItemList = ({ item }: Props) => {
       descricao: "",
       porcao: "",
       preco: 0,
+      id: 0,
     });
   };
+  const addToCart = () => {
+    dispatch(
+      add({
+        descricao: modal.descricao,
+        foto: modal.foto,
+        id: modal.id,
+        nome: modal.nome,
+        porcao: modal.porcao,
+        preco: modal.preco,
+      })
+    );
+    closeModal();
+    dispatch(open());
+  };
+  const [modal, setModal] = useState({
+    isVisible: false,
+    foto: "",
+    nome: "",
+    descricao: "",
+    porcao: "",
+    preco: 0,
+    id: 0,
+  });
+
+  if (item.length === 0) {
+    return <h3>a </h3>;
+  }
 
   return (
     <>
@@ -55,6 +74,7 @@ const ItemList = ({ item }: Props) => {
                 descricao: item.descricao,
                 porcao: item.porcao,
                 preco: item.preco,
+                id: item.id,
               })
             }
           >
@@ -84,7 +104,7 @@ const ItemList = ({ item }: Props) => {
                 Serve: de{modal.porcao}
               </p>
 
-              <ButtonContainer>
+              <ButtonContainer onClick={addToCart}>
                 {"Adicione ao carrinho - " + formataPreco(modal.preco)}
               </ButtonContainer>
             </div>
