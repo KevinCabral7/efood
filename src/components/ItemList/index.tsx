@@ -64,25 +64,24 @@ const ItemList = ({ item, item2 }: Props) => {
     <>
       <S.ContainerItems>
         {item.map((item) => (
-          <li
-            key={item.id}
-            onClick={() =>
-              setModal({
-                isVisible: true,
-                foto: item.foto,
-                nome: item.nome,
-                descricao: item.descricao,
-                porcao: item.porcao,
-                preco: item.preco,
-                id: item.id,
-              })
-            }
-          >
-            <Card
-              foto={item.foto}
-              nome={item.nome}
-              descricao={item.descricao}
-            />
+          <li key={item.id}>
+            <Card foto={item.foto} nome={item.nome} descricao={item.descricao}>
+              <ButtonContainer
+                onClick={() =>
+                  setModal({
+                    isVisible: true,
+                    foto: item.foto,
+                    nome: item.nome,
+                    descricao: item.descricao,
+                    porcao: item.porcao,
+                    preco: item.preco,
+                    id: item.id,
+                  })
+                }
+              >
+                Mais detalhes
+              </ButtonContainer>
+            </Card>
           </li>
         ))}
         <S.Modal className={modal.isVisible === true ? "visible" : ""}>
@@ -105,7 +104,7 @@ const ItemList = ({ item, item2 }: Props) => {
               </p>
 
               <ButtonContainer onClick={addToCart}>
-                {"Adicione ao carrinho - " + formataPreco(modal.preco)}
+                {"Adicione ao carrinho  " + formataPreco(modal.preco)}
               </ButtonContainer>
             </div>
           </S.ModalContent>

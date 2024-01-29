@@ -12,7 +12,7 @@ type Props = {
   destacado?: boolean;
   descricao: string;
 };
-const CardRestaurant = ({
+const RestaurantList = ({
   capa,
   tipo,
   destacado,
@@ -50,4 +50,4 @@ const CardRestaurant = ({
   );
 };
 
-export default CardRestaurant;
+export default RestaurantList;

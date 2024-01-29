@@ -8,10 +8,16 @@ export type Props = {
   children: string;
 };
 
-const Button = ({ to, type, variant = "purchase", children }: Props) => {
+const Button = ({
+  to,
+  type,
+  variant = "purchase",
+  children,
+  onClick,
+}: Props) => {
   if (type === "button") {
     return (
-      <ButtonContainer type="button" variant={variant}>
+      <ButtonContainer type="button" variant={variant} onClick={onClick}>
         {children}
       </ButtonContainer>
     );

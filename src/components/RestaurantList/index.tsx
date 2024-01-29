@@ -5,8 +5,8 @@ export type Props = {
   Items: Item[];
 };
 
-const CardList = ({ Items }: Props) => {
-  if (!CardList) {
+const RestaurantList = ({ Items }: Props) => {
+  if (!RestaurantList) {
     return (
       <div>
         <h3>Aguarde</h3>
@@ -34,4 +34,4 @@ const CardList = ({ Items }: Props) => {
   );
 };
 
-export default CardList;
+export default RestaurantList;

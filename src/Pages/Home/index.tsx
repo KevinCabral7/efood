@@ -1,4 +1,4 @@
-import CardList from "../../components/CardList";
+import RestaurantList from "../../components/RestaurantList";
 import Nav from "../../components/Nav";
 import { useGetRestaurantQuery } from "../../services/api";
 export interface CardapioItem {
@@ -28,7 +28,7 @@ const Home = () => {
       <>
         <Nav />
         <div className="container">
-          <CardList Items={item} />
+          <RestaurantList Items={item} />
         </div>
       </>
     );

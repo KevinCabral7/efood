@@ -28,7 +28,7 @@ export const Overlay = styled.div`
 export const SideBar = styled.aside`
   z-index: 1;
   background-color: #e66767;
-  padding: 32px 8px 0;
+  padding: 32px 8px;
   max-width: 360px;
   width: 100%;
   ${ButtonContainer} {
