@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { breakpoints, colors } from "../../styles";
+
 export const Hero = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,7 +19,7 @@ export const Hero = styled.div`
   &::after {
     content: "";
     position: absolute;
-    background-color: #000;
+    background-color: ${colors.black};
     width: 100%;
     height: 100%;
     top: 0;
@@ -26,7 +28,7 @@ export const Hero = styled.div`
   }
   h4,
   h3 {
-    color: #fff;
+    color: ${colors.white};
     font-size: 32px;
     line-height: 37.5px;
   }
@@ -35,9 +37,12 @@ export const Hero = styled.div`
     margin-top: 24px;
     font-weight: 100;
     text-transform: capitalize;
+    @media (max-width: ${breakpoints.tablet}) {
+      margin-bottom: 120px;
   }
+}
   h3 {
     font-weight: bold;
     margin-bottom: 32px;
-  }
+    
 `;

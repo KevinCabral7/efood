@@ -10,7 +10,7 @@ type Props = {
 const Card = ({ descricao, foto, nome, children }: Props) => {
   const getDescricao = (descricao: string) => {
     if (descricao.length >= 200) {
-      return descricao.slice(0, 160) + "...";
+      return descricao.slice(0, 153) + "...";
     }
     return descricao;
   };

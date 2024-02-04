@@ -2,29 +2,22 @@ import { ButtonContainer, ButtonLink } from "./styles";
 
 export type Props = {
   to?: string;
-  type?: "button" | "link";
+  type?: "button" | "link" | "submit";
   onClick?: () => void;
-  variant?: "purchase" | "info";
   children: string;
 };
 
-const Button = ({
-  to,
-  type,
-  variant = "purchase",
-  children,
-  onClick,
-}: Props) => {
-  if (type === "button") {
+const Button = ({ to, type, children, onClick }: Props) => {
+  if (type === "button" || type === "submit") {
     return (
-      <ButtonContainer type="button" variant={variant} onClick={onClick}>
+      <ButtonContainer type={type} onClick={onClick}>
         {children}
       </ButtonContainer>
     );
   }
   return (
     <ButtonLink type="link" to={to as string}>
-      Saiba mais
+      {children}
     </ButtonLink>
   );
 };

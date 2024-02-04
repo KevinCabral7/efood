@@ -1,6 +1,9 @@
 import RestaurantList from "../../components/RestaurantList";
 import Nav from "../../components/Nav";
+import Loader from "../../components/Loader";
+
 import { useGetRestaurantQuery } from "../../services/api";
+
 export interface CardapioItem {
   foto: string;
   preco: number;
@@ -33,7 +36,7 @@ const Home = () => {
       </>
     );
   }
-  return <h3>Carregando...</h3>;
+  return <Loader />;
 };
 
 export default Home;

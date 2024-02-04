@@ -1,6 +1,9 @@
 import styled from "styled-components";
-import lixeira from "../../assets/lixeira.png";
+
 import { ButtonContainer } from "../Button/styles";
+import { breakpoints, colors } from "../../styles";
+
+import lixeira from "../../assets/lixeira.png";
 
 export const CartContainer = styled.div`
   top: 0;
@@ -27,18 +30,28 @@ export const Overlay = styled.div`
 
 export const SideBar = styled.aside`
   z-index: 1;
-  background-color: #e66767;
+  background-color: ${colors.pink};
   padding: 32px 8px;
   max-width: 360px;
   width: 100%;
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 80%;
+  }
+
   ${ButtonContainer} {
     font-weight: bold;
     font-size: 14px;
   }
+  .empty-text {
+    font-size: 14px;
+    line-height: 22px;
+    color: ${colors.lightWhite};
+    text-align: center;
+  }
 `;
 
 export const CartItem = styled.li`
-  background-color: #ffebd9;
+  background-color: ${colors.lightWhite};
   padding: 8px 8px 12px 8px;
   margin-bottom: 16px;
   display: flex;
@@ -62,19 +75,19 @@ export const CartItem = styled.li`
   h3 {
     font-size: 18px;
     font-weight: bold;
-    color: #e66767;
+    color: ${colors.pink};
   }
   span {
     display: block;
     font-size: 14px;
-    color: #e66767;
+    color: ${colors.pink};
     margin-top: 16px;
   }
 `;
 
 export const TotalPrice = styled.p`
   font-size: 14px;
-  color: #ffebd9;
+  color: ${colors.white};
   display: flex;
   justify-content: space-between;
   margin: 40px 0 16px;

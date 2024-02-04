@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { TagContainer } from "../Tag/styles";
+import { colors } from "../../styles";
 
 export const Title = styled.h3`
   font-size: 18px;
@@ -36,8 +37,8 @@ export const TitleContainer = styled.div`
 `;
 
 export const CardRestaurant = styled.div`
-  background-color: #fff;
-  color: #e66767;
+  background-color: ${colors.white};
+  color: ${colors.pink};
   position: relative;
 
   ${Title} {
@@ -55,7 +56,7 @@ export const CardRestaurant = styled.div`
   }
 
   ${TagContainer} {
-    color: #ffebd9;
+    color: ${colors.lightWhite};
     &:last-child {
       margin-right: 16px;
       margin-left: 8px;

@@ -1,22 +1,20 @@
 import { useState } from "react";
-
-import { CardapioItem } from "../../Pages/Home";
-import { ButtonContainer } from "../../components/Button/styles";
-import * as S from "./styles";
-import Card from "../../components/Card";
-import close from "../../assets/close.png";
 import { useDispatch } from "react-redux";
+
+import Card from "../../components/Card";
+
 import { add, open } from "../../store/reducers/cart";
+import { CardapioItem } from "../../Pages/Home";
+import { parsePrice } from "../../Utils";
+
+import close from "../../assets/close.png";
+
+import * as S from "./styles";
+import { ButtonContainer } from "../../components/Button/styles";
 
 type Props = {
   item: CardapioItem[];
   item2?: CardapioItem;
-};
-export const formataPreco = (preco = 0) => {
-  return new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  }).format(preco);
 };
 
 const ItemList = ({ item, item2 }: Props) => {
@@ -104,7 +102,7 @@ const ItemList = ({ item, item2 }: Props) => {
               </p>
 
               <ButtonContainer onClick={addToCart}>
-                {"Adicione ao carrinho  " + formataPreco(modal.preco)}
+                {"Adicione ao carrinho  " + parsePrice(modal.preco)}
               </ButtonContainer>
             </div>
           </S.ModalContent>

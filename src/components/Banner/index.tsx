@@ -1,5 +1,7 @@
 import { Item } from "../../Pages/Home";
+
 import { Hero } from "./styles";
+
 type Props = {
   item?: Item;
 };

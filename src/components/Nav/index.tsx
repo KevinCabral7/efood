@@ -1,5 +1,6 @@
-import { NavContainer, ItemsContainer } from "./styles";
 import icone from "../../assets/logo.png";
+
+import { NavContainer, ItemsContainer } from "./styles";
 const Nav = () => {
   return (
     <NavContainer>

@@ -1,8 +1,9 @@
-import { FooterContainer } from "./styles";
 import icone from "../../assets/logo.png";
 import facebookIcon from "../../assets/facebook-round-svgrepo-com.png";
 import instagramIcon from "../../assets/instagram-round-svgrepo-com.png";
 import twitterIcon from "../../assets/twitter-2-svgrepo-com.png";
+
+import { FooterContainer } from "./styles";
 
 const Footer = () => (
   <FooterContainer>

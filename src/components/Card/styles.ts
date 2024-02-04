@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { breakpoints, colors } from "../../styles";
 
 export const Title = styled.h3`
   font-size: 18px;
@@ -12,11 +13,15 @@ export const Description = styled.p`
 `;
 
 export const CardItem = styled.div`
-  background-color: #e66767;
-  color: #fff;
+  background-color: ${colors.pink};
+  color: ${colors.white};
   display: block;
   padding: 8px;
-  > img {
+  height: 100%;
+  @media (max-width: ${breakpoints.tablet}) {
+  }
+
+  img {
     display: block;
     object-fit: cover;
     width: 100%;
@@ -25,17 +30,26 @@ export const CardItem = styled.div`
   ${Description} {
     line-height: 22px;
     font-size: 14px;
-    color: #ffebd9;
-    margin-bottom: 8px;
+    color: ${colors.lightWhite};
     font-weight: 400;
+    @media (max-width: ${breakpoints.tablet}) {
+      font-size: 12px;
+      line-height: 18px;
+    }
   }
   Button {
-    background-color: #ffebd9;
+    background-color: ${colors.lightWhite};
     display: block;
     font-weight: bold;
+    margin-top: 8px;
   }
   ${Title} {
     margin: 8px 0;
     font-size: 16px;
+    white-space: nowrap;
+    @media (max-width: ${breakpoints.tablet}) {
+      font-size: 14px;
+      line-height: 16px;
+    }
   }
 `;

@@ -1,6 +1,8 @@
-import { ButtonLink } from "../Button/styles";
-import icone from "../../assets/estrela.png";
 import Tag from "../Tag";
+
+import icone from "../../assets/estrela.png";
+
+import { ButtonLink } from "../Button/styles";
 import * as S from "./styles";
 
 type Props = {

@@ -1,5 +1,7 @@
 import styled from "styled-components";
+
 import { ButtonContainer } from "../Button/styles";
+import { colors } from "../../styles";
 
 type InputGroupWidth = {
   maxWidth?: string;
@@ -9,7 +11,7 @@ type RowGap = {
 };
 
 export const CheckoutContainer = styled.div`
-  color: #ffebd9;
+  color: ${colors.lightWhite};
   font-weight: 700;
 `;
 
@@ -30,13 +32,16 @@ export const ButtonGroup = styled.div`
 export const InputGroup = styled.div<InputGroupWidth>`
   margin-bottom: 8px;
   input {
-    color: #4b4b4b;
-    background-color: #ffebd9;
+    color: ${colors.gray};
+    background-color: ${colors.lightWhite};
     border: none;
     height: 32px;
     margin: 8px 0;
     font-weight: 700;
     padding: 8px 0 8px 8px;
+  }
+  .error {
+    border: 2px solid red;
   }
 
   input,

@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
+import { breakpoints, colors } from "../../styles";
+
 export const FooterContainer = styled.nav`
-  background-color: #ffebd9;
+  background-color: ${colors.lightYellow};
   display: flex;
   font-weight: bold;
   flex-direction: column;
@@ -15,16 +17,23 @@ export const FooterContainer = styled.nav`
     img {
       margin-bottom: 76px;
       margin-right: 8px;
+      @media (max-width: ${breakpoints.tablet}) {
+        margin-bottom: 24px;
+      }
     }
   }
   p {
     margin-bottom: 40px;
-    color: #e66767;
+    color: ${colors.pink};
     line-height: 11.72px;
     font-size: 10px;
     text-align: center;
-    max-width: 496px;
     display: block;
     font-weight: 400;
+    width: 40%;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 90%;
+    }
   }
 `;

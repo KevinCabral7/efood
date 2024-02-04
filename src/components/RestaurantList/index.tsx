@@ -1,6 +1,8 @@
 import CardRestaurant from "../CardRestaurant";
-import * as S from "./styles";
+
 import { Item } from "../../Pages/Home";
+
+import * as S from "./styles";
 export type Props = {
   Items: Item[];
 };

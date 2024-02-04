@@ -1,12 +1,14 @@
 import styled from "styled-components";
-import { Props } from ".";
 import { Link } from "react-router-dom";
+
+import { Props } from ".";
+import { colors } from "../../styles";
 
 export const ButtonContainer = styled.button<Props>`
   display: block;
   width: 100%;
-  color: #e66767;
-  background-color: #ffebd9;
+  color: ${colors.pink};
+  background-color: ${colors.lightWhite};
   border: none;
   line-height: 16.41px;
   font-size: 14px;
@@ -15,8 +17,8 @@ export const ButtonContainer = styled.button<Props>`
 `;
 
 export const ButtonLink = styled(Link)`
-  color: #fff;
-  background-color: #e66767;
+  color: ${colors.white};
+  background-color: ${colors.pink};
   border: none;
   line-height: 16.41px;
   font-size: 14px;
